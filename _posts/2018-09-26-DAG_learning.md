@@ -410,5 +410,5 @@ g = sns.pairplot(df,
 ```
 
 
-![png](/images/2018-09-26-DAG_learning_8_0.png)
+![png](/blog/images/2018-09-26-DAG_learning_8_0.png)
 

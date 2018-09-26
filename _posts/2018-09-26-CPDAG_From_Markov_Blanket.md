@@ -404,5 +404,5 @@ print('Algorithms have very different behaviour, suggesting that they can possib
 
 
 
-![png](/images/2018-09-26-CPDAG_From_Markov_Blanket_8_1.png)
+![png](/blog/images/2018-09-26-CPDAG_From_Markov_Blanket_8_1.png)
 

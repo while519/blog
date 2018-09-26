@@ -696,7 +696,7 @@ print('lm maybe acceptable')
 
 
 
-![png](/images/2018-09-26-Preprocessing_pruning_method_from_CAM_11_1.png)
+![png](/blog/images/2018-09-26-Preprocessing_pruning_method_from_CAM_11_1.png)
 
 
 ## In the second part, we evaluate the DAG learning quality for these methods.
@@ -1052,5 +1052,5 @@ print('no comment')
 
 
 
-![png](/images/2018-09-26-Preprocessing_pruning_method_from_CAM_19_1.png)
+![png](/blog/images/2018-09-26-Preprocessing_pruning_method_from_CAM_19_1.png)
 

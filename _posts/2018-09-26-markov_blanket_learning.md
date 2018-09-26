@@ -718,5 +718,5 @@ print('High precision but low recall, maybe tune the parameter can help')
 
 
 
-![png](/images/2018-09-26-markov_blanket_learning_13_1.png)
+![png](/blog/images/2018-09-26-markov_blanket_learning_13_1.png)
 

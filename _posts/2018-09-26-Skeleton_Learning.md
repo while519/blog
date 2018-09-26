@@ -477,7 +477,7 @@ print('too many points and colors, hard to distinguish anything')
 
 
 
-![png](/images/2018-09-26-Skeleton_Learning_9_1.png)
+![png](/blog/images/2018-09-26-Skeleton_Learning_9_1.png)
 
 
 
@@ -496,5 +496,5 @@ g = sns.pairplot(df,
 ```
 
 
-![png](/images/2018-09-26-Skeleton_Learning_10_0.png)
+![png](/blog/images/2018-09-26-Skeleton_Learning_10_0.png)
 

@@ -687,5 +687,5 @@ print('fast-ica based lingam perform the best!')
 
 
 
-![png](/images/2018-09-26-Ordering_evaluation_11_1.png)
+![png](/blog/images/2018-09-26-Ordering_evaluation_11_1.png)
 
