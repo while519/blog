@@ -2,7 +2,7 @@
 layout: post
 title: ''
 date: 2018-09-26 02:28:49
-image: ''
+image: 'https://img00.deviantart.net/c610/i/2010/314/2/6/wallpaper_collection_17_bing_by_thefirstfirefox-d32kob6.jpg'
 description:
 category: ''
 tags:
