@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ''
+title: 'Node Ordering Learning'
 date: 2018-09-27 02:56:34
 image: ''
 description:

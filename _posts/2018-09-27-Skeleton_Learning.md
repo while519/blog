@@ -2,7 +2,7 @@
 layout: post
 title: ''
 date: 2018-09-27 02:56:54
-image: ''
+image: 'Skeleton Learning'
 description:
 category: ''
 tags:
