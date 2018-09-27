@@ -38,12 +38,17 @@ jupyter nbconvert ./_jupyter/$1.ipynb --to html --output-dir=./_posts --output=$
 
 # Check if the conversion has left a blank line at the top of the file. 
 # (Sometimes it does and this messes up formatting.)
-firstline=$(head -n 1 ./_posts/$filename.md)
+firstline=$(head -n 1 ./_posts/$filename.html)
 if [ "$firstline" = "" ]; then
   # If it has, get rid of it.
-  tail -n +2 "./_posts/$filename.md" > "./_posts/$filename.tmp" && mv "./_posts/$filename.tmp" "./_posts/$filename.md"
+  tail -n +2 "./_posts/$filename.html" > "./_posts/$filename.tmp" && mv "./_posts/$filename.tmp" "./_posts/$filename.html"
 fi
 
+tail -n +2 "./_posts/$filename.html" > "./_posts/$filename.tmp" && mv "./_posts/$filename.tmp" "./_posts/$filename.html"
+
 cat <(initpost_content) "./_posts/$filename.html" > "./_posts/$filename.tmp" && mv "./_posts/$filename.tmp" "./_posts/$filename.md"
+
+# Remove backup file created by sed command.
+rm ./_posts/$filename.html
 
 echo "Done converting."
