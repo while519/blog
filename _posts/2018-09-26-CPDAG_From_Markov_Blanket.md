@@ -1,6 +1,6 @@
 ---
-layout: post
-title: ''
+layout: minimal
+title: 'Learning from Oracle Markov Blanket'
 date: 2018-09-26 02:26:23
 image: '/blog/images/wallpaper-your-best-day-a.jpg'
 description:

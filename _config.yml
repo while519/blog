@@ -21,8 +21,8 @@ linkedin_username: yu-wu-943b75ab
 #medium_username: 
 
 # Build settings
-#markdown: kramdown
-#highlighter: rouge
+markdown: kramdown
+highlighter: rouge
 permalink: /:title/
 
 # Plugins
