@@ -2,7 +2,7 @@
 layout: post
 title: 'DAG Learning'
 date: 2018-09-27 02:56:03
-image: ''
+image: '/blog/images/Bayes.png'
 description:
 category: ''
 tags:

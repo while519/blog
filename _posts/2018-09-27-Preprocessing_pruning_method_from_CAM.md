@@ -2,7 +2,7 @@
 layout: post
 title: 'CAM Benchmarks'
 date: 2018-09-27 02:53:48
-image: ''
+image: '/blog/images/cam_fig3.png'
 description:
 category: ''
 tags:

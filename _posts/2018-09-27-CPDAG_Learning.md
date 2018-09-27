@@ -2,7 +2,7 @@
 layout: post
 title: 'CPDAG Learning'
 date: 2018-09-27 02:55:19
-image: ''
+image: '/blog/images/cpdag.png'
 description:
 category: ''
 tags:

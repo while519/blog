@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ''
+title: 'Skeleton Learning'
 date: 2018-09-27 02:56:54
-image: 'Skeleton Learning'
+image: '/blog/images/skeleton.png'
 description:
 category: ''
 tags:

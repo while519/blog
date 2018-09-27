@@ -2,7 +2,7 @@
 layout: post
 title: 'Markov Blanket Learning'
 date: 2018-09-27 02:56:18
-image: ''
+image: '/blog/images/markov_blanket.png'
 description:
 category: ''
 tags:
