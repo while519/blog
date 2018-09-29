@@ -4,7 +4,7 @@ title: 'Markov Blanket Learning'
 date: 2018-09-27 02:56:18
 image: '/blog/images/markov_blanket.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:

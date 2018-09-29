@@ -4,7 +4,7 @@ title: 'Skeleton Learning'
 date: 2018-09-27 02:56:54
 image: '/blog/images/skeleton.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:

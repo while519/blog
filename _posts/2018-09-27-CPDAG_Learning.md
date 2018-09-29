@@ -4,7 +4,7 @@ title: 'CPDAG Learning'
 date: 2018-09-27 02:55:19
 image: '/blog/images/cpdag.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:

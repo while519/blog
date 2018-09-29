@@ -4,7 +4,7 @@ title: 'DAG Learning'
 date: 2018-09-27 02:56:03
 image: '/blog/images/Bayes.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:

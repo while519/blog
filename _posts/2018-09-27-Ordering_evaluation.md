@@ -4,7 +4,7 @@ title: 'Node Ordering Learning'
 date: 2018-09-27 02:56:34
 image: '/blog/images/family_tree.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:

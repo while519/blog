@@ -4,7 +4,7 @@ title: 'CAM Benchmarks'
 date: 2018-09-27 02:53:48
 image: '/blog/images/cam_fig3.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:

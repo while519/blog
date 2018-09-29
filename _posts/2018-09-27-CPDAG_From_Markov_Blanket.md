@@ -4,7 +4,7 @@ title: 'Learning From Oracle Markov Blanket'
 date: 2018-09-27 02:54:59
 image: '/blog/images/markov_blanket.png'
 description:
-category: ''
+category: 'report'
 tags:
 twitter_text:
 introduction:
