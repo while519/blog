@@ -4,8 +4,13 @@ title: 'Continuous Additive Noise Model Analysis'
 date: 2018-09-29 08:49:15
 image: '/blog/images/noise_modelling.jpg'
 description:
-category: ''
+category: 'core ideas'
 tags:
+- additive noise model
+- conditional independence test
+- hsic
+- linear regression
+- covariates
 twitter_text:
 introduction:
 ---
