@@ -2,7 +2,7 @@
 layout: post
 title: 'Continuous Additive Noise Model Analysis'
 date: 2018-09-29 08:49:15
-image: '/blog/images/noise_modelling.jpg'
+image: '/blog/images/noise_modelling.png'
 description:
 category: 'core ideas'
 tags:
