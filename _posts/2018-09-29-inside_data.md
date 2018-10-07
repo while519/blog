@@ -13134,15 +13134,15 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="o">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="o">)</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">private.classes</span> <span class="k">import</span> <span class="n">DataSet</span><span class="p">,</span> <span class="n">BNGraph</span>
+<span class="kn">from</span> <span class="nn">private.classes</span> <span class="k">import</span> <span class="n">DataSet</span><span class="o">,</span> <span class="n">BNGraph</span>
 <span class="kn">from</span> <span class="nn">definitions</span> <span class="k">import</span> <span class="n">DATA_ROOT_DIR</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="o">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="o">)</span>
 <span class="c1"># set WARNING for Matplotlib</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="o">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="o">)</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -13158,12 +13158,12 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load the input data</span>
-<span class="n">dat1</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">()</span>
+<span class="n">dat1</span> <span class="o">=</span> <span class="n">DataSet</span><span class="o">()</span>
 
-<span class="n">dat1</span><span class="o">.</span><span class="n">load_input_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">DATA_ROOT_DIR</span> <span class="o">+</span><span class="s1">&#39;/dat_v1/raw/&#39;</span><span class="p">,</span> <span class="n">n_nodes</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">dat1</span><span class="o">.</span><span class="n">load_input_data</span><span class="o">(</span><span class="n">path</span><span class="o">=</span><span class="n">DATA_ROOT_DIR</span> <span class="o">+</span><span class="s1">&#39;/dat_v1/raw/&#39;</span><span class="o">,</span> <span class="n">n_nodes</span><span class="o">=</span><span class="mi">100</span><span class="o">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="o">)</span>
 
-<span class="n">dat1</span><span class="o">.</span><span class="n">l2_normalize</span><span class="p">()</span>
-<span class="k">assert</span> <span class="n">dat1</span><span class="o">.</span><span class="n">check_data_gen</span><span class="p">()</span>
+<span class="n">dat1</span><span class="o">.</span><span class="n">l2_normalize</span><span class="o">()</span>
+<span class="k">assert</span> <span class="n">dat1</span><span class="o">.</span><span class="n">check_data_gen</span><span class="o">()</span>
 </pre></div>
 
     </div>
@@ -13197,10 +13197,10 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># coefficent distribution after normalizing data</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">adjM</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">adjM</span><span class="o">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;data range: from {np.min(dat1.adjM)} to {np.max(dat1.adjM)}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="o">(</span><span class="n">f</span><span class="s1">&#39;data range: from {np.min(dat1.adjM)} to {np.max(dat1.adjM)}&#39;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13247,16 +13247,16 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># visualize the adjacency information</span>
-<span class="n">p</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">true_permutation</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">list</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">true_permutation</span><span class="o">)</span>
 
-<span class="n">adjM_permu</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">adjM</span><span class="p">[</span><span class="n">p</span><span class="p">,</span> <span class="p">:]</span>
-<span class="n">adjM_permu</span> <span class="o">=</span> <span class="n">adjM_permu</span><span class="p">[:,</span> <span class="n">p</span><span class="p">]</span>
+<span class="n">adjM_permu</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">adjM</span><span class="o">[</span><span class="n">p</span><span class="o">,</span> <span class="o">:]</span>
+<span class="n">adjM_permu</span> <span class="o">=</span> <span class="n">adjM_permu</span><span class="o">[:,</span> <span class="n">p</span><span class="o">]</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">adjM_permu</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="o">(</span><span class="n">adjM_permu</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">adjM_permu</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CONCLUSION: Data can be permuted into an upper triangluar matrix&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="o">(</span><span class="n">adjM_permu</span><span class="o">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="o">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
+<span class="nb">print</span><span class="o">(</span><span class="s1">&#39;CONCLUSION: Data can be permuted into an upper triangluar matrix&#39;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13310,7 +13310,7 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># find the most significant leaf nodes</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">dag_longest_path</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">dag_longest_path</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13375,10 +13375,10 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">95</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">[:,</span><span class="mi">95</span><span class="o">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CONCLUSION: The Gaussianity effect due to CLT is not significant&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="o">(</span><span class="s1">&#39;CONCLUSION: The Gaussianity effect due to CLT is not significant&#39;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13428,20 +13428,20 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
 <span class="n">vmax</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axn</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="o">.</span><span class="mi">91</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">03</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">,</span> <span class="n">axn</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="o">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="o">)</span>
+<span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="o">([</span><span class="o">.</span><span class="mi">91</span><span class="o">,</span> <span class="o">.</span><span class="mi">3</span><span class="o">,</span> <span class="o">.</span><span class="mi">03</span><span class="o">,</span> <span class="o">.</span><span class="mi">4</span><span class="o">])</span>
 
 <span class="c1"># for observational variables</span>
-<span class="n">axn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:])),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
-<span class="n">axn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="o">.</span><span class="n">imshow</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="o">(</span><span class="nb">abs</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">[:,</span> <span class="o">:])),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="o">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="o">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="o">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="o">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">(</span><span class="s1">&#39;Data&#39;</span><span class="o">)</span>
 
 <span class="c1"># for noise variables</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">axn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">nsM</span><span class="p">[:,</span> <span class="p">:])),</span>  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
-<span class="n">axn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Noise&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">axn</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="o">.</span><span class="n">imshow</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="o">(</span><span class="nb">abs</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">nsM</span><span class="o">[:,</span> <span class="o">:])),</span>  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="o">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="o">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="o">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="o">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">(</span><span class="s1">&#39;Noise&#39;</span><span class="o">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">(</span><span class="n">im</span><span class="o">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="o">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 </pre></div>
 
     </div>
@@ -13479,14 +13479,14 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># histogram plot</span>
 <span class="n">n_bins</span> <span class="o">=</span> <span class="mi">100</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axn</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">,</span> <span class="n">axn</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="o">,</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="o">)</span>
 
-<span class="n">axn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">n_bins</span><span class="p">)</span>
-<span class="n">axn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
-<span class="n">axn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">nsM</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">n_bins</span><span class="p">)</span>
-<span class="n">axn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Noise&#39;</span><span class="p">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="o">.</span><span class="n">hist</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">flatten</span><span class="o">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">n_bins</span><span class="o">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">(</span><span class="s1">&#39;Data&#39;</span><span class="o">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="o">.</span><span class="n">hist</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">nsM</span><span class="o">.</span><span class="n">flatten</span><span class="o">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">n_bins</span><span class="o">)</span>
+<span class="n">axn</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">(</span><span class="s1">&#39;Noise&#39;</span><span class="o">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 </pre></div>
 
     </div>
@@ -13541,19 +13541,19 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># training residules</span>
-<span class="n">est_res_ss</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">oracle_res_ss</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">est_res_ss</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">oracle_res_ss</span> <span class="o">=</span> <span class="o">[]</span>
 
-<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">dat1</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
-    <span class="n">pa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">predecessors</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">dat1</span><span class="o">.</span><span class="n">nodes</span><span class="o">():</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="nb">list</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">predecessors</span><span class="o">(</span><span class="n">node</span><span class="o">))</span>
     
     <span class="c1"># let go the root nodes</span>
-    <span class="k">if</span> <span class="n">pa</span><span class="p">:</span>
-        <span class="n">X</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="nb">list</span><span class="p">(</span><span class="n">pa</span><span class="p">)]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">node</span><span class="p">]</span>
-        <span class="n">est</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">lstsq_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">est_res_ss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">resid</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-        <span class="n">oracle_res_ss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">nsM</span><span class="p">[:,</span> <span class="n">node</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">pa</span><span class="o">:</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">[:,</span> <span class="nb">list</span><span class="o">(</span><span class="n">pa</span><span class="o">)]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">[:,</span> <span class="n">node</span><span class="o">]</span>
+        <span class="n">est</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">lstsq_fit</span><span class="o">(</span><span class="n">X</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+        <span class="n">est_res_ss</span><span class="o">.</span><span class="n">append</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="o">(</span><span class="n">est</span><span class="o">.</span><span class="n">resid</span><span class="o">**</span><span class="mi">2</span><span class="o">))</span>
+        <span class="n">oracle_res_ss</span><span class="o">.</span><span class="n">append</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">nsM</span><span class="o">[:,</span> <span class="n">node</span><span class="o">]</span><span class="o">**</span><span class="mi">2</span><span class="o">))</span>
 <span class="c1">#est.summary()</span>
 </pre></div>
 
@@ -13567,12 +13567,12 @@ Loading data:  error_type  sparsity  #nodes  #samples  repid
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">est_res_ss</span><span class="p">,</span> <span class="n">oracle_res_ss</span><span class="p">)])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="o">([</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="o">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="o">(</span><span class="n">est_res_ss</span><span class="o">,</span> <span class="n">oracle_res_ss</span><span class="o">)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">est_res_ss</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">oracle_res_ss</span><span class="p">))</span>
+<span class="nb">print</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="o">(</span><span class="n">est_res_ss</span><span class="o">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="o">(</span><span class="n">oracle_res_ss</span><span class="o">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CONCLUSION: Overfitting always overfitting&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="o">(</span><span class="s1">&#39;CONCLUSION: Overfitting always overfitting&#39;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13622,18 +13622,18 @@ CONCLUSION: Overfitting always overfitting
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># predictive performance check</span>
 
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">linear_model</span>
-<span class="n">lr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="o">()</span>
 
-<span class="n">pred_res_ss</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pred_res_ss</span> <span class="o">=</span> <span class="o">[]</span>
 
-<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">dat1</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
-    <span class="n">pa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">predecessors</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">dat1</span><span class="o">.</span><span class="n">nodes</span><span class="o">():</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="nb">list</span><span class="o">(</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">predecessors</span><span class="o">(</span><span class="n">node</span><span class="o">))</span>
 
-    <span class="k">if</span> <span class="n">pa</span><span class="p">:</span>
-        <span class="n">X</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="nb">list</span><span class="p">(</span><span class="n">pa</span><span class="p">)]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="n">node</span><span class="p">]</span>
-        <span class="n">est</span> <span class="o">=</span> <span class="o">-</span> <span class="n">dat1</span><span class="o">.</span><span class="n">score_cv</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># mean</span>
-        <span class="n">pred_res_ss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">est</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pa</span><span class="o">:</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">[:,</span> <span class="nb">list</span><span class="o">(</span><span class="n">pa</span><span class="o">)]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">data</span><span class="o">[:,</span> <span class="n">node</span><span class="o">]</span>
+        <span class="n">est</span> <span class="o">=</span> <span class="o">-</span> <span class="n">dat1</span><span class="o">.</span><span class="n">score_cv</span><span class="o">(</span><span class="n">lr</span><span class="o">,</span> <span class="n">X</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>  <span class="c1"># mean</span>
+        <span class="n">pred_res_ss</span><span class="o">.</span><span class="n">append</span><span class="o">(</span><span class="n">est</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13646,12 +13646,12 @@ CONCLUSION: Overfitting always overfitting
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pred_res_ss</span><span class="p">,</span> <span class="n">oracle_res_ss</span><span class="p">)])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="o">([</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="o">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="o">(</span><span class="n">pred_res_ss</span><span class="o">,</span> <span class="n">oracle_res_ss</span><span class="o">)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pred_res_ss</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">oracle_res_ss</span><span class="p">))</span>
+<span class="nb">print</span><span class="o">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="o">(</span><span class="n">pred_res_ss</span><span class="o">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="o">(</span><span class="n">oracle_res_ss</span><span class="o">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CONCLUSION: As what is said, Overfitting!!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="o">(</span><span class="s1">&#39;CONCLUSION: As what is said, Overfitting!!&#39;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13749,10 +13749,10 @@ CONCLUSION: As what is said, Overfitting!!
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">target_node</span> <span class="o">=</span> <span class="mi">95</span>
 
-<span class="n">list_of_interests</span> <span class="o">=</span> <span class="p">[</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parents</span><span class="p">(</span><span class="n">target_node</span><span class="p">),</span> 
-                     <span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">ancestors</span><span class="p">(</span><span class="n">target_node</span><span class="p">)</span> <span class="o">-</span> <span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parents</span><span class="p">(</span><span class="n">target_node</span><span class="p">)]</span>
+<span class="n">list_of_interests</span> <span class="o">=</span> <span class="o">[</span><span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parents</span><span class="o">(</span><span class="n">target_node</span><span class="o">),</span> 
+                     <span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">ancestors</span><span class="o">(</span><span class="n">target_node</span><span class="o">)</span> <span class="o">-</span> <span class="n">dat1</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parents</span><span class="o">(</span><span class="n">target_node</span><span class="o">)]</span>
 
-<span class="n">_</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">accumulate_cv</span><span class="p">(</span><span class="n">target_node</span><span class="p">,</span><span class="n">list_of_interests</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">dat1</span><span class="o">.</span><span class="n">accumulate_cv</span><span class="o">(</span><span class="n">target_node</span><span class="o">,</span><span class="n">list_of_interests</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13815,7 +13815,7 @@ bar values:  [-6.409733653774449e-15, -2.7580064933029135e-14]&#39;
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dat1</span><span class="o">.</span><span class="n">accumulate_ci</span><span class="p">(</span><span class="n">target_node</span><span class="p">,</span><span class="n">list_of_interests</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dat1</span><span class="o">.</span><span class="n">accumulate_ci</span><span class="o">(</span><span class="n">target_node</span><span class="o">,</span><span class="n">list_of_interests</span><span class="o">)</span>
 </pre></div>
 
     </div>
